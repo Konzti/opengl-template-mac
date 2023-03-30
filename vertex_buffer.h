@@ -32,7 +32,7 @@ VertexBuffer create_vertex_buffer(Vertex3D * vertices, int num_vertices, GLuint 
     glBindVertexArray(buffer.vao);
 
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex3D), (void *)offsetof(Vertex3D, x));
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex3D), (void *)offsetof(Vertex3D, x));
 
     return buffer;
 }
