@@ -25,8 +25,8 @@ int main(int argc, char** argv)
     /* Initialize the library */
     if (!glfwInit())
         return -1;
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     #ifdef __APPLE__
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -60,11 +60,10 @@ int main(int argc, char** argv)
 
     while (!glfwWindowShouldClose(window))
     {
-        glClearColor(0.0f, 0.1f, 0.1f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         bind_vertex_buffer(&buffer);
-        glBindBuffer(GL_ARRAY_BUFFER, buffer.id);
         glDrawArrays(GL_TRIANGLES, 0, numVertices);
         unbind_vertex_buffer();
         
